@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oracolul celor Cinci Cercuri · The Five Circles Oracle</title>
+
+<meta name="description" content="Un oracol de 52 de carti de intelepciune: trage, respira, asculta. A 52-card wisdom oracle - draw, breathe, listen. Focul care cunoaste / The Fire That Knows.">
+<meta name="author" content="Alin Dragos">
+<meta name="theme-color" content="#15111e">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><rect width='120' height='120' rx='24' fill='%2315111e'/><path d='M90 30 A44 44 0 1 0 99 66' fill='none' stroke='%23d9b26b' stroke-width='5' stroke-linecap='round'/><g fill='%23d9b26b'><circle cx='60' cy='36' r='4.2'/><circle cx='82.8' cy='52.6' r='4.2'/><circle cx='74.1' cy='79.4' r='4.2'/><circle cx='45.9' cy='79.4' r='4.2'/><circle cx='37.2' cy='52.6' r='4.2'/><circle cx='60' cy='60' r='3.6'/></g></svg>">
+<link rel="canonical" href="https://alindrimbu-brico.github.io/oracol/">
+<meta property="og:url" content="https://alindrimbu-brico.github.io/oracol/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Focul care cunoaste">
+<meta property="og:title" content="Oracolul celor Cinci Cercuri - The Five Circles Oracle">
+<meta property="og:description" content="Un oracol de 52 de carti de intelepciune: trage, respira, asculta. A 52-card wisdom oracle - draw, breathe, listen. Focul care cunoaste / The Fire That Knows.">
+<meta property="og:image" content="https://alindrimbu-brico.github.io/oracol/og-oracol.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Oracolul celor Cinci Cercuri - The Five Circles Oracle">
+<meta name="twitter:description" content="Un oracol de 52 de carti de intelepciune: trage, respira, asculta. A 52-card wisdom oracle - draw, breathe, listen. Focul care cunoaste / The Fire That Knows.">
+<meta name="twitter:image" content="https://alindrimbu-brico.github.io/oracol/og-oracol.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#15111e;--ivory:#efe7d6;--mute:#9a92aa;--gold:#d9b26b;--gold-dim:#a98a4e;
+  --earth:#c2743a;--water:#3fa094;--fire:#d0563b;--wind:#78a486;--void:#a888cf;--way:#d9b26b;
+  --line:rgba(217,178,107,.22);--disp:'Fraunces',Georgia,serif;--body:'EB Garamond',Georgia,serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--ink);color:var(--ivory);font-family:var(--body);min-height:100vh;overflow-x:hidden;position:relative;-webkit-font-smoothing:antialiased}
+.sky{position:fixed;inset:0;z-index:0;pointer-events:none;background:
+  radial-gradient(1100px 700px at 50% -10%, rgba(217,178,107,.10), transparent 60%),
+  radial-gradient(900px 600px at 15% 110%, rgba(168,136,207,.12), transparent 60%),
+  radial-gradient(900px 600px at 88% 120%, rgba(63,160,148,.08), transparent 60%),var(--ink)}
+.stars{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5}
+.wrap{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:0 22px 80px}
+header{text-align:center;padding:46px 0 8px}
+.enso-wrap{width:96px;height:96px;margin:0 auto 8px}
+.enso-wrap svg{width:100%;height:100%;display:block}
+.enso path{fill:none;stroke:var(--gold);stroke-width:5;stroke-linecap:round;stroke-dasharray:760;stroke-dashoffset:760;animation:draw 2.6s ease .2s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.kicker{font-family:var(--disp);letter-spacing:.42em;text-transform:uppercase;font-size:11px;color:var(--gold);font-weight:600;margin:2px 0 10px}
+h1{font-family:var(--disp);font-weight:500;font-size:clamp(30px,6vw,52px);line-height:1.05;margin:0;letter-spacing:.01em}
+h1 .sub{display:block;font-size:.42em;letter-spacing:.34em;text-transform:uppercase;color:var(--mute);margin-top:14px;font-weight:600}
+.lede{max-width:560px;margin:18px auto 0;color:var(--mute);font-size:17px;font-style:italic;line-height:1.6}
+.bar{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;margin:30px 0 8px}
+.tabs{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(255,255,255,.02)}
+.tabs button{font-family:var(--disp);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);background:none;border:0;padding:11px 16px;cursor:pointer;transition:.25s;font-weight:500}
+.tabs button.on{color:var(--ink);background:var(--gold)}
+.tabs button:hover:not(.on){color:var(--ivory)}
+.lang button{padding:11px 14px}
+main{margin-top:26px}
+.panel{display:none}
+.panel.show{display:block;animation:fade .5s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.stage{display:flex;flex-direction:column;align-items:center;gap:26px}
+.deckzone{position:relative;min-height:440px;display:flex;align-items:center;justify-content:center;width:100%}
+
+.card{width:300px;height:432px;position:relative}
+@media(max-width:400px){.card{width:266px;height:384px}}
+.cardinner{width:100%;height:100%;transform-origin:center center;will-change:transform;backface-visibility:hidden}
+
+.cardback{width:100%;height:100%;position:relative;border-radius:16px;
+  background:radial-gradient(120% 90% at 50% 0%, #2a2140, #1a1528 72%);border:1px solid var(--line);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;
+  box-shadow:0 24px 60px rgba(0,0,0,.5), inset 0 0 0 6px rgba(217,178,107,.06)}
+.cardback::before{content:"";position:absolute;inset:14px;border:1px solid rgba(217,178,107,.26);border-radius:10px}
+.cardback .emblem{width:150px;height:150px;position:relative;z-index:1}
+.cardback .bwm{position:relative;z-index:1;font-family:var(--disp);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim)}
+
+.cardfront{width:100%;height:100%;position:relative;border-radius:16px;padding:26px 22px;display:flex;flex-direction:column;
+  background:linear-gradient(165deg,#241d38,#191426);border:1px solid var(--line);
+  box-shadow:0 24px 60px rgba(0,0,0,.55), inset 0 0 0 6px rgba(217,178,107,.05)}
+.cardfront::before{content:"";position:absolute;inset:12px;border:1px solid rgba(217,178,107,.22);border-radius:10px;pointer-events:none}
+.cardfront .wm{position:absolute;right:16px;bottom:14px;width:150px;height:150px;color:var(--el);opacity:.12;pointer-events:none}
+.cardfront .wm svg{width:100%;height:100%}
+.cf-top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;font-family:var(--disp);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--el);font-weight:600}
+.cf-top .idx{color:var(--gold-dim)}
+.cf-glyph{width:34px;height:34px;color:var(--el);margin:14px 0 2px;position:relative;z-index:1}
+.cf-glyph svg{width:100%;height:100%}
+.cf-core{flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;gap:15px}
+.cf-word{font-family:var(--disp);font-weight:500;font-size:33px;line-height:1.06;color:var(--ivory)}
+.cf-word .dot{color:var(--el)}
+.cf-line{font-size:19px;line-height:1.5;color:var(--ivory);font-style:italic;border-left:2px solid var(--el);padding-left:14px}
+.cf-foot{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;padding-top:12px;border-top:1px solid rgba(217,178,107,.16);font-family:var(--disp);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
+.cf-foot .mk{width:16px;height:16px;color:var(--gold-dim)}
+
+.cta{font-family:var(--disp);font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:14px;color:var(--ink);background:var(--gold);border:0;border-radius:999px;padding:16px 34px;cursor:pointer;transition:.25s;box-shadow:0 10px 30px rgba(217,178,107,.28)}
+.cta:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(217,178,107,.4)}
+.cta.ghost{background:none;color:var(--gold);border:1px solid var(--line);box-shadow:none}
+.cta.ghost:hover{background:rgba(217,178,107,.08)}
+.ctarow{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.reading{max-width:520px;text-align:center;color:var(--mute);min-height:26px;font-size:15px;font-style:italic;line-height:1.6}
+.spread{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.slot{display:flex;flex-direction:column;align-items:center;gap:12px}
+.slot .card{width:212px;height:306px}
+.slot .cardfront{padding:16px 14px}
+.slot .cf-word{font-size:21px}.slot .cf-line{font-size:13.5px;padding-left:10px}
+.slot .cf-glyph{width:26px;height:26px;margin:8px 0 0}
+.slot .cardfront .wm{width:100px;height:100px}
+.slot .lbl{font-family:var(--disp);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.slot .lbl small{display:block;color:var(--mute);letter-spacing:.08em;text-transform:none;font-style:italic;margin-top:3px}
+.galintro{text-align:center;color:var(--mute);font-style:italic;margin:2px 0 26px}
+.circle-h{display:flex;align-items:center;gap:14px;margin:34px 0 16px}
+.circle-h .g{width:26px;height:26px;color:var(--ch)}
+.circle-h .nm{font-family:var(--disp);font-size:20px;color:var(--ivory);font-weight:500}
+.circle-h .ln{flex:1;height:1px;background:linear-gradient(90deg,var(--ch),transparent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.mini{border-radius:12px;padding:16px 15px;position:relative;overflow:hidden;min-height:172px;background:linear-gradient(165deg,#221b34,#181322);border:1px solid var(--line);display:flex;flex-direction:column;gap:9px}
+.mini .wm{position:absolute;right:6px;bottom:2px;width:78px;height:78px;color:var(--ch);opacity:.13}
+.mini .g{width:20px;height:20px;color:var(--ch);position:relative;z-index:1}
+.mini .w{font-family:var(--disp);font-size:19px;color:var(--ivory);position:relative;z-index:1}
+.mini .w .dot{color:var(--ch)}
+.mini .l{font-size:14.5px;font-style:italic;color:var(--ivory);line-height:1.45;position:relative;z-index:1;border-left:2px solid var(--ch);padding-left:10px}
+.mini .t{margin-top:auto;font-family:var(--disp);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);position:relative;z-index:1}
+.guide{max-width:720px;margin:0 auto}
+.guide .intro{font-family:var(--disp);font-size:22px;line-height:1.6;color:var(--ivory);text-align:center;margin:0 auto 10px;max-width:620px}
+.guide .divider{width:44px;height:44px;color:var(--gold);margin:26px auto}
+.step{display:flex;gap:20px;align-items:flex-start;padding:22px 0;border-top:1px solid rgba(217,178,107,.14)}
+.step .sg{flex:0 0 40px;width:40px;height:40px;color:var(--gold);margin-top:4px}
+.step .sc h3{font-family:var(--disp);font-weight:500;font-size:20px;margin:0 0 8px;color:var(--gold)}
+.step .sc p{margin:0;font-size:17px;line-height:1.66;color:var(--ivory)}
+.step .sc .sub{white-space:pre-line;color:var(--mute);font-style:italic;margin-top:8px;font-size:15.5px;line-height:1.7}
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:14px 0 6px}
+.keycard{border:1px solid var(--line);border-radius:12px;padding:14px 15px;background:rgba(255,255,255,.02)}
+.keycard .kh{display:flex;align-items:center;gap:9px;margin-bottom:5px}
+.keycard .kh .g{width:19px;height:19px;color:var(--kc)}
+.keycard .kh span{font-family:var(--disp);font-size:14px;letter-spacing:.06em;color:var(--ivory)}
+.keycard p{margin:0;font-size:14.5px;color:var(--mute);font-style:italic;line-height:1.5}
+.blessing{text-align:center;font-family:var(--disp);font-style:italic;font-size:19px;line-height:1.7;color:var(--ivory);max-width:560px;margin:30px auto 0;padding-top:26px;border-top:1px solid rgba(217,178,107,.14)}
+footer{text-align:center;margin-top:60px;color:var(--mute)}
+footer .en{width:60px;height:1px;background:var(--line);margin:0 auto 20px}
+footer .b{font-family:var(--disp);letter-spacing:.3em;text-transform:uppercase;font-size:11px;color:var(--gold-dim)}
+footer .s{font-size:13px;margin-top:8px;font-style:italic}
+@media (prefers-reduced-motion: reduce){.enso path{animation:none;stroke-dashoffset:0}*{animation-duration:.001s!important}}
+</style>
+</head>
+<body>
+<div class="sky"></div>
+<canvas class="stars" id="stars"></canvas>
+<div class="wrap">
+  <header>
+    <div class="enso-wrap" aria-hidden="true"><svg viewBox="0 0 100 100"><path class="enso-path" d="M50 8 C24 8 8 28 8 50 C8 74 27 92 52 92 C74 92 92 75 92 52 C92 30 76 12 55 11"/></svg></div>
+    <div class="kicker" id="kicker">Oracol al Înțelepciunii</div>
+    <h1 id="title">Oracolul celor Cinci Cercuri<span class="sub" id="subtitle">Înțelepciune de tras · 52 de cărți</span></h1>
+    <p class="lede" id="lede">Amestecă, respiră, trage o carte. Cele cinci cercuri îți vor spune ce ai nevoie să auzi acum.</p>
+    <div class="bar">
+      <div class="tabs" id="modes">
+        <button data-mode="draw" class="on">O carte</button>
+        <button data-mode="spread">Trei cercuri</button>
+        <button data-mode="gallery">Toate cărțile</button>
+        <button data-mode="howto">Cum se folosește</button>
+      </div>
+      <div class="tabs lang"><button data-lang="ro" class="on">RO</button><button data-lang="en">EN</button></div>
+    </div>
+  </header>
+  <main>
+    <section class="panel show stage" id="p-draw">
+      <div class="deckzone"><div class="card" id="mainCard"><div class="cardinner" id="mainInner"></div></div></div>
+      <div class="ctarow">
+        <button class="cta" id="drawBtn">Trage o carte</button>
+        <button class="cta ghost" id="againBtn" style="display:none">Încă o carte</button>
+      </div>
+      <p class="reading" id="reading"></p>
+    </section>
+    <section class="panel" id="p-spread">
+      <div class="spread" id="spreadRow"></div>
+      <div class="ctarow" style="margin-top:26px"><button class="cta" id="spreadBtn">Trage cele trei</button></div>
+      <p class="reading" id="spreadNote"></p>
+    </section>
+    <section class="panel" id="p-gallery">
+      <p class="galintro" id="galintro">Cele cincizeci și două de cărți, adunate pe cele cinci cercuri.</p>
+      <div id="galleryBody"></div>
+    </section>
+    <section class="panel" id="p-howto"><div class="guide" id="guideBody"></div></section>
+  </main>
+  <footer><div class="en"></div><div class="b" id="footB">Focul care cunoaște</div><div class="s" id="foot">Distilat din cartea „Cele Cinci Cercuri” · Reverb · Focșani</div></footer>
+</div>
+
+<script>
+const G={
+  earth:'<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 32 L19 17 L27 26 L32 20 L41 32"/><line x1="6" y1="39" x2="42" y2="39"/></svg>',
+  water:'<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M7 17c4-5 9-5 13 0s9 5 13 0 5-3 8-4"/><path d="M7 26c4-5 9-5 13 0s9 5 13 0 5-3 8-4"/><path d="M7 35c4-5 9-5 13 0s9 5 13 0 5-3 8-4"/></svg>',
+  fire:'<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 7c1 8 9 10 9 18a9 9 0 0 1-18 0c0-4 2-6 3-9 1 3 3 5 3 5 0-6 1-10 3-14z"/></svg>',
+  wind:'<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 16h22a5 5 0 1 0-5-5"/><path d="M6 24h30"/><path d="M6 32h20a5 5 0 1 1-5 5"/></svg>',
+  void:'<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M36 13A17 17 0 1 0 41 28"/></svg>',
+  way:'<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M24 6 L27.5 20.5 L42 24 L27.5 27.5 L24 42 L20.5 27.5 L6 24 L20.5 20.5 Z"/></svg>',
+};
+function emblemSVG(){
+  const pts=[[60,36],[82.8,52.6],[74.1,79.4],[45.9,79.4],[37.2,52.6]];
+  let d=pts.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="2.6"/>`).join('')+'<circle cx="60" cy="60" r="2.2"/>';
+  return `<svg viewBox="0 0 120 120" width="100%" height="100%"><path d="M90 30 A44 44 0 1 0 99 66" fill="none" stroke="var(--gold)" stroke-width="2.4" stroke-linecap="round"/><g fill="var(--gold-dim)">${d}</g></svg>`;
+}
+const CIRCLES={
+  earth:{ro:"Pământ",en:"Earth",color:"var(--earth)",g:"earth"},
+  water:{ro:"Apă",en:"Water",color:"var(--water)",g:"water"},
+  fire:{ro:"Foc",en:"Fire",color:"var(--fire)",g:"fire"},
+  wind:{ro:"Vânt",en:"Wind",color:"var(--wind)",g:"wind"},
+  void:{ro:"Vid",en:"Void",color:"var(--void)",g:"void"},
+  way:{ro:"Calea",en:"The Way",color:"var(--way)",g:"way"},
+};
+const CARDS=[
+  {c:"earth",kw:{ro:"Temelia",en:"Foundation"},t:{ro:"Tot ce e trainic începe de jos, din ce nu se vede.",en:"All that endures begins low, in what is unseen."}},
+  {c:"earth",kw:{ro:"Așezare",en:"Grounding"},t:{ro:"Stai bine. Restul se zidește pe asta.",en:"Stand well. The rest is built on that."}},
+  {c:"earth",kw:{ro:"Rădăcina",en:"The Root"},t:{ro:"Ce nu se vede ține tot ce se vede.",en:"What is unseen holds all that is seen."}},
+  {c:"earth",kw:{ro:"Răbdare",en:"Patience"},t:{ro:"Temeinic înseamnă încet și sigur.",en:"Thorough means slow and sure."}},
+  {c:"earth",kw:{ro:"Măsura",en:"The Measure"},t:{ro:"Singura întrecere adevărată e cu tine, cel de ieri.",en:"The only true contest is with yourself, the one from yesterday."}},
+  {c:"earth",kw:{ro:"Zidire",en:"Building"},t:{ro:"Construiește puțin, dar în fiecare zi. Ce se zidește încet, ține mult.",en:"Build a little, every day. What is raised slowly, holds long."}},
+  {c:"earth",kw:{ro:"Prezența",en:"Presence"},t:{ro:"Sub toate rolurile e o prezență tăcută, mereu acolo. Aceea e temelia.",en:"Beneath all your roles is a silent presence, always there. That is the foundation."}},
+  {c:"earth",kw:{ro:"Întrebarea",en:"The Question"},t:{ro:"Pe ce stai azi? Răspunde cinstit, într-un rând.",en:"What are you standing on today? Answer honestly, in a single line."}},
+  {c:"earth",kw:{ro:"Începutul",en:"The Beginning"},t:{ro:"Ce e prost așezat la început se plătește scump la sfârșit.",en:"What is poorly laid at the start is paid for dearly at the end."}},
+  {c:"earth",kw:{ro:"Reazemul",en:"The Support"},t:{ro:"Cine se sprijină pe sine nu se prăbușește când lumea se mișcă.",en:"Whoever leans on themselves does not fall when the world moves."}},
+  {c:"water",kw:{ro:"Curgerea",en:"Flow"},t:{ro:"Tare nu e ce nu se îndoaie, ci ce curge și revine.",en:"The strong is not what will not bend, but what flows and returns."}},
+  {c:"water",kw:{ro:"Statornicie",en:"Steadiness"},t:{ro:"Curge, ocolește, revino. Și rămâi tu.",en:"Flow, go around, return. And remain yourself."}},
+  {c:"water",kw:{ro:"Calm",en:"Calm"},t:{ro:"Calmul vede ce încordarea ratează.",en:"Calm sees what tension misses."}},
+  {c:"water",kw:{ro:"Adaptare",en:"Adapting"},t:{ro:"A te adapta nu înseamnă a te pierde.",en:"To adapt is not to lose yourself."}},
+  {c:"water",kw:{ro:"Blândețe",en:"Softness"},t:{ro:"Apa moale învinge piatra tare — prin răbdare.",en:"Soft water defeats hard stone — through patience."}},
+  {c:"water",kw:{ro:"Ocolul",en:"The Way Around"},t:{ro:"Nu te izbi de piedică. Ocolește-o, ca apa.",en:"Do not throw yourself against the obstacle. Go around it, like water."}},
+  {c:"water",kw:{ro:"Adâncul",en:"The Deep"},t:{ro:"Sub valuri, adâncul rămâne neclintit — o liniște pe care nicio furtună n-o atinge.",en:"Beneath the waves, the depth stays unmoved — a stillness no storm can touch."}},
+  {c:"water",kw:{ro:"Privirea",en:"The Look"},t:{ro:"Ce simte, de fapt, cel din fața ta?",en:"What does the one before you truly feel?"}},
+  {c:"water",kw:{ro:"Fără formă",en:"Formless"},t:{ro:"Poți intra în orice formă fără să rămâi prins în ea.",en:"You can enter any form without being caught in it."}},
+  {c:"water",kw:{ro:"Nesilit",en:"Unforced"},t:{ro:"Ce nu se deschide azi prin forță, se deschide mâine prin răbdare.",en:"What will not open today by force opens tomorrow by patience."}},
+  {c:"fire",kw:{ro:"Clipa",en:"The Moment"},t:{ro:"Clipa potrivită nu strigă. O simți, și pornești.",en:"The right moment does not shout. You feel it, and you set out."}},
+  {c:"fire",kw:{ro:"Curaj",en:"Courage"},t:{ro:"Nu aștepta să-ți piară frica. Pornește, și frica rămâne în urmă.",en:"Do not wait for the fear to pass. Set out, and the fear is left behind."}},
+  {c:"fire",kw:{ro:"Hotărâre",en:"Resolve"},t:{ro:"Hotărârea iute, dusă la timp, bate planul perfect.",en:"A swift decision, made in time, beats the perfect plan."}},
+  {c:"fire",kw:{ro:"Întreg",en:"Wholly"},t:{ro:"Pornește cu totul, sau nu porni.",en:"Set out wholly, or do not set out."}},
+  {c:"fire",kw:{ro:"Ritm",en:"Rhythm"},t:{ro:"Ritmul tău e puterea ta — deslușește-l.",en:"Your rhythm is your power — discern it."}},
+  {c:"fire",kw:{ro:"Primul pas",en:"First Step"},t:{ro:"Fă primul pas înainte ca frica să crească.",en:"Take the first step before fear has time to grow."}},
+  {c:"fire",kw:{ro:"Focul",en:"The Fire"},t:{ro:"Viața arde oricum. Întrebarea e dacă arzi pentru ceva.",en:"Life burns either way. The question is whether you burn for something."}},
+  {c:"fire",kw:{ro:"Tăietura",en:"The Cut"},t:{ro:"Un „nu” limpede, fără scuze lungi.",en:"One clear “no,” with no long excuses."}},
+  {c:"fire",kw:{ro:"La timp",en:"In Time"},t:{ro:"Prea devreme, e necopt; prea târziu, e pierdut.",en:"Too early, it is unripe; too late, it is lost."}},
+  {c:"fire",kw:{ro:"Fapta",en:"The Deed"},t:{ro:"O faptă mică, dusă la capăt, bate zece planuri nepornite.",en:"One small deed carried through beats ten plans never begun."}},
+  {c:"wind",kw:{ro:"Luciditate",en:"Clarity"},t:{ro:"Ca să-ți vezi calea, privește și celelalte cărări.",en:"To see your own path, look also at the other roads."}},
+  {c:"wind",kw:{ro:"Limpezime",en:"Discernment"},t:{ro:"Vezi limpede. Restul e doar strălucire.",en:"See clearly. The rest is only glitter."}},
+  {c:"wind",kw:{ro:"Deschidere",en:"Openness"},t:{ro:"Te cunoști mai bine privind și alte căi.",en:"You know yourself better by looking at other ways too."}},
+  {c:"wind",kw:{ro:"Unealta",en:"The Tool"},t:{ro:"O singură unealtă, o singură lume.",en:"One tool, one world."}},
+  {c:"wind",kw:{ro:"Vigilență",en:"Vigilance"},t:{ro:"Nu marile greșeli te rătăcesc, ci abaterile mici.",en:"It is not the great mistakes that lose you, but the small deviations."}},
+  {c:"wind",kw:{ro:"Cumpătare",en:"Judgment"},t:{ro:"Ce e prea ușor e rareori adevărat.",en:"What is too easy is rarely true."}},
+  {c:"wind",kw:{ro:"Curajul de a vedea",en:"Seeing"},t:{ro:"Luciditatea cere curajul de a privi ce nu vrei să vezi.",en:"Clarity asks for the courage to look at what you do not wish to see."}},
+  {c:"wind",kw:{ro:"Cealaltă cărare",en:"The Other Path"},t:{ro:"Scrie cinstit cum vede celălalt.",en:"Write honestly how the other one sees it."}},
+  {c:"wind",kw:{ro:"Poteca",en:"The Side-Track"},t:{ro:"O cărare lăturalnică, nebăgată în seamă, te duce departe de drum.",en:"An unnoticed side-track leads you far from the road."}},
+  {c:"wind",kw:{ro:"Oglinda",en:"The Mirror"},t:{ro:"Cine se cunoaște recunoaște minciuna din clipa în care o aude.",en:"Whoever knows themselves knows a lie the moment they hear it."}},
+  {c:"void",kw:{ro:"Liniștea",en:"Stillness"},t:{ro:"Mintea golită de zgomot e cea mai trează. Aude tot.",en:"A mind emptied of noise is the most awake. It hears everything."}},
+  {c:"void",kw:{ro:"Libertate",en:"Freedom"},t:{ro:"Golește-te de zgomot. Ce rămâne e o minte trează și liberă.",en:"Empty yourself of noise. What remains is a mind awake and free."}},
+  {c:"void",kw:{ro:"Claritate",en:"Ease"},t:{ro:"Mintea liberă de iluzii vede limpede și lucrează ușor.",en:"A mind free of illusions sees clearly and works with ease."}},
+  {c:"void",kw:{ro:"Plinul",en:"Fullness"},t:{ro:"Vidul nu e lipsă, e liniște trează.",en:"The Void is not lack; it is awake stillness."}},
+  {c:"void",kw:{ro:"Firescul",en:"The Natural"},t:{ro:"Calea adevărată e cea firească.",en:"The true Way is the natural one."}},
+  {c:"void",kw:{ro:"Tăcere",en:"Silence"},t:{ro:"Fă-ți loc de tăcere. În liniște auzi ce zgomotul acoperă.",en:"Make room for silence. In stillness you hear what noise covers."}},
+  {c:"void",kw:{ro:"Martorul",en:"The Witness"},t:{ro:"O prezență tăcută privește din spatele gândurilor și nu se tulbură.",en:"A silent witness watches from behind your thoughts and is troubled by none."}},
+  {c:"void",kw:{ro:"Lasă jos",en:"Set It Down"},t:{ro:"Un lucru pe care-l cari degeaba — lasă-l jos.",en:"One thing you carry for nothing — set it down."}},
+  {c:"void",kw:{ro:"Întoarcerea",en:"The Return"},t:{ro:"Calea adevărată nu e o cucerire, ci o întoarcere: la firesc, la prezent.",en:"The true Way is not a conquest but a return: to the natural, to the present."}},
+  {c:"void",kw:{ro:"Acasă",en:"Home"},t:{ro:"Pacea căutată în o mie de locuri era, de la început, acasă.",en:"The peace sought in a thousand places was, from the start, home."}},
+  {c:"way",kw:{ro:"Calea",en:"The Way"},t:{ro:"Nu cartea e Calea, ci pasul pe care îl faci acum.",en:"It is not the book that is the Way, but the step you take now."}},
+  {c:"way",kw:{ro:"Întregul",en:"The Whole"},t:{ro:"Cele cinci sunt un singur fel de a fi treaz.",en:"The five are a single way of being awake."}},
+];
+CARDS.forEach((c,i)=>c.n=i+1);
+
+const T={
+  ro:{kicker:"Oracol al Înțelepciunii",title:"Oracolul celor Cinci Cercuri",subtitle:"Înțelepciune de tras · 52 de cărți",
+    lede:"Amestecă, respiră, trage o carte. Cele cinci cercuri îți vor spune ce ai nevoie să auzi acum.",
+    draw:"Trage o carte",again:"Încă o carte",spreadBtn:"Trage cele trei",brand:"Focul care cunoaște",
+    modes:{draw:"O carte",spread:"Trei cercuri",gallery:"Toate cărțile",howto:"Cum se folosește"},
+    reading:c=>`Cercul ${CIRCLES[c.c].ro} · cartea ${c.n} din 52`,
+    spreadNote:"Așezare — unde stai. Cale — ce ai de făcut. Libertate — ce te eliberează.",
+    slots:[{l:"Așezare",s:"unde stai"},{l:"Cale",s:"ce ai de făcut"},{l:"Libertate",s:"ce te eliberează"}],
+    galintro:"Cele cincizeci și două de cărți, adunate pe cele cinci cercuri.",
+    foot:"Distilat din cartea „Cele Cinci Cercuri” · Reverb · Focșani",cardsub:c=>`Cercul ${CIRCLES[c.c].ro}`},
+  en:{kicker:"Oracle of Wisdom",title:"The Five Circles Oracle",subtitle:"Wisdom to draw · 52 cards",
+    lede:"Shuffle, breathe, draw a card. The five circles will tell you what you need to hear now.",
+    draw:"Draw a card",again:"Draw again",spreadBtn:"Draw the three",brand:"The Fire That Knows",
+    modes:{draw:"One card",spread:"Three circles",gallery:"All cards",howto:"How to read"},
+    reading:c=>`Circle of ${CIRCLES[c.c].en} · card ${c.n} of 52`,
+    spreadNote:"Ground — where you stand. Path — what to do. Freedom — what sets you free.",
+    slots:[{l:"Ground",s:"where you stand"},{l:"Path",s:"what to do"},{l:"Freedom",s:"what frees you"}],
+    galintro:"The fifty-two cards, gathered into the five circles.",
+    foot:"Distilled from the book “The Five Rings” · Reverb · Focșani",cardsub:c=>`${CIRCLES[c.c].en} Circle`},
+};
+const GUIDE={
+ ro:{intro:"Acest oracol nu ghicește viitorul. El ține o oglindă. Nu-ți spune ce va fi, ci îți arată ce știi deja, dar n-ai avut încă liniște să auzi. Înțelepciunea nu vine din cărți — vine din tine, când cărțile îți fac loc s-o vezi.",
+  steps:[{g:"void",h:"Înainte de a trage",p:"Oprește-te. Respiră de trei ori, rar. Lasă ziua să se așeze. Apoi ține în minte o singură întrebare — nu una la care vrei un „da”, ci una la care ești gata să auzi adevărul. Dacă n-ai o întrebare, ajunge o rugăminte tăcută: «arată-mi ce am nevoie să văd acum»."},
+    {g:"earth",h:"O singură carte",p:"Pentru limpezimea zilei, trage o carte. Ea e priveghetorul tău de azi — o singură vorbă de purtat cu tine, de dimineață până seara. Nu o analiza. Las-o să lucreze în tăcere, și vezi seara ce a mișcat în tine."},
+    {g:"wind",h:"Cele trei cercuri",p:"Când porți o întrebare mai adâncă, desfășoară trei cărți. Citește-le împreună, ca pe o singură frază: prima te așază, a doua te pune în mișcare, a treia îți arată spre ce.",sub:"Așezare — unde stai acum, pământul de sub tine.\nCale — ce ai de făcut, mișcarea care te cheamă.\nLibertate — ce te eliberează, dincolo de faptă."},
+    {g:"fire",h:"Cum să citești o carte",p:"Nu căuta răspunsul în carte. Caută în tine reacția la ea. O carte adevărată nu-ți spune ce să faci — trezește ceea ce știai. Dacă simți o împotrivire, oprește-te acolo: adesea, cartea care ne supără e chiar cea de care aveam nevoie. Lasă cuvântul să coboare din minte în piept. Acolo se citește oracolul."}],
+  keysT:"Glasul celor cinci cercuri",
+  keys:[["earth","Temelia","ce te ține, ce e de așezat."],["water","Curgerea","unde să te adaptezi, să te liniștești, să ocolești."],["fire","Focul","ce cere acțiune, curaj, clipa coaptă."],["wind","Luciditatea","ce e de văzut limpede, ce nu e cum pare."],["void","Liniștea","ce e de lăsat, de tăcut, de eliberat."]],
+  bless:"Nu crede cartea mai mult decât te crezi pe tine. Ea e doar un prag. Tu ești cel care trece. Trage rar, ascultă adânc, și lasă fiecare carte să te întoarcă acasă — la ceea ce ai știut dintotdeauna."},
+ en:{intro:"This oracle does not tell the future. It holds up a mirror. It does not say what will be; it shows you what you already know but have not yet been quiet enough to hear. The wisdom does not come from the cards — it comes from you, when the cards make room for you to see it.",
+  steps:[{g:"void",h:"Before you draw",p:"Stop. Breathe three times, slowly. Let the day settle. Then hold a single question in mind — not one you want a “yes” to, but one whose truth you are ready to hear. If you have no question, a silent request is enough: ‘show me what I need to see now.’"},
+    {g:"earth",h:"A single card",p:"For the clarity of a day, draw a single card. It is your keeper for today — one word to carry with you, from morning to night. Do not dissect it. Let it work in silence, and see at nightfall what it has moved in you."},
+    {g:"wind",h:"The three circles",p:"When you carry a deeper question, lay three cards. Read them together, as a single sentence: the first steadies you, the second sets you moving, the third shows you toward what.",sub:"Ground — where you stand now, the earth beneath you.\nPath — what is yours to do, the move that calls you.\nFreedom — what sets you free, beyond the deed."},
+    {g:"fire",h:"How to read a card",p:"Do not look for the answer in the card. Look, in yourself, for your response to it. A true card does not tell you what to do — it wakes what you already knew. If you feel resistance, stop there: often, the card that unsettles us is exactly the one we needed. Let the word descend from the head into the chest. That is where the oracle is read."}],
+  keysT:"The voice of the five circles",
+  keys:[["earth","Foundation","what holds you, what must be set."],["water","Flow","where to adapt, to grow calm, to go around."],["fire","Fire","what asks for action, courage, the ripe moment."],["wind","Clarity","what must be seen clearly, what is not as it seems."],["void","Stillness","what to release, to quiet, to set free."]],
+  bless:"Do not believe the card more than you believe yourself. It is only a threshold. You are the one who crosses. Draw slowly, listen deeply, and let each card return you home — to what you have always known."},
+};
+
+let lang="ro",mode="draw",current=null,spreadCards=[];
+const $=s=>document.querySelector(s);
+
+function backHTML(){return `<div class="cardback"><div class="emblem">${emblemSVG()}</div><div class="bwm">${T[lang].brand}</div></div>`;}
+function frontHTML(card){
+  const ci=CIRCLES[card.c];
+  return `<div class="cardfront" style="--el:${ci.color}">
+    <div class="wm">${G[ci.g]}</div>
+    <div class="cf-top"><span>${ci[lang]}</span><span class="idx">${String(card.n).padStart(2,'0')} / 52</span></div>
+    <div class="cf-glyph">${G[ci.g]}</div>
+    <div class="cf-core"><div class="cf-word">${card.kw[lang]}<span class="dot">.</span></div><div class="cf-line">${card.t[lang]}</div></div>
+    <div class="cf-foot"><span>${T[lang].cardsub(card)}</span><span class="mk">${G[ci.g]}</span></div></div>`;
+}
+function pick(ex){let p;do{p=CARDS[Math.floor(Math.random()*CARDS.length)]}while(ex&&ex.includes(p));return p;}
+
+/* ---- bulletproof flip: scaleX out, swap content, scaleX in (no 3D backface) ---- */
+const REDUCE = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function flipInner(inner, html, done){
+  if(REDUCE){inner.innerHTML=html; inner.style.transform=''; if(done)done(); return;}
+  const out=inner.animate([{transform:'scaleX(1)'},{transform:'scaleX(0)'}],{duration:260,easing:'ease-in',fill:'forwards'});
+  out.onfinish=()=>{
+    inner.innerHTML=html;
+    const ins=inner.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:300,easing:'ease-out',fill:'forwards'});
+    ins.onfinish=()=>{ inner.style.transform='scaleX(1)'; try{out.cancel();ins.cancel();}catch(e){} };
+    if(done)done();
+  };
+}
+
+const mainInner=$("#mainInner");
+function doDraw(){
+  const next=pick(current?[current]:null);
+  flipInner(mainInner, frontHTML(next), ()=>{
+    current=next; $("#reading").textContent=T[lang].reading(next);
+    $("#drawBtn").style.display='none'; $("#againBtn").style.display='';
+  });
+}
+$("#drawBtn").onclick=doDraw; $("#againBtn").onclick=doDraw;
+
+function buildSpreadSlots(){
+  const row=$("#spreadRow");row.innerHTML='';
+  T[lang].slots.forEach((s,i)=>{const slot=document.createElement('div');slot.className='slot';
+    slot.innerHTML=`<div class="card"><div class="cardinner" data-i="${i}">${backHTML()}</div></div><div class="lbl">${s.l}<small>${s.s}</small></div>`;
+    row.appendChild(slot);});
+}
+function doSpread(){
+  buildSpreadSlots();spreadCards=[];
+  const inners=[...document.querySelectorAll('#spreadRow .cardinner')];
+  inners.forEach((inn,i)=>{const card=pick(spreadCards);spreadCards.push(card);
+    setTimeout(()=>flipInner(inn, frontHTML(card)), 360*i+200);});
+  $("#spreadNote").textContent=T[lang].spreadNote;
+  $("#spreadBtn").textContent=lang==='ro'?"Trage din nou":"Draw again";
+}
+$("#spreadBtn").onclick=doSpread;
+
+function buildGallery(){
+  const body=$("#galleryBody");body.innerHTML='';
+  Object.keys(CIRCLES).forEach(key=>{
+    const list=CARDS.filter(c=>c.c===key);if(!list.length)return;const ci=CIRCLES[key];
+    const h=document.createElement('div');h.className='circle-h';h.style.setProperty('--ch',ci.color);
+    h.innerHTML=`<span class="g">${G[ci.g]}</span><span class="nm">${lang==='ro'?(key==='way'?'Calea':'Cercul '+ci.ro):(key==='way'?'The Way':ci.en+' Circle')}</span><span class="ln"></span>`;
+    body.appendChild(h);
+    const grid=document.createElement('div');grid.className='grid';
+    list.forEach(c=>{const m=document.createElement('div');m.className='mini';m.style.setProperty('--ch',ci.color);
+      m.innerHTML=`<div class="wm">${G[ci.g]}</div><div class="g">${G[ci.g]}</div><div class="w">${c.kw[lang]}<span class="dot">.</span></div><div class="l">${c.t[lang]}</div><div class="t">${String(c.n).padStart(2,'0')} / 52</div>`;
+      grid.appendChild(m);});
+    body.appendChild(grid);});
+}
+function buildGuide(){
+  const g=GUIDE[lang],b=$("#guideBody");
+  let steps=g.steps.map(s=>`<div class="step"><div class="sg">${G[s.g]}</div><div class="sc"><h3>${s.h}</h3><p>${s.p}</p>${s.sub?`<div class="sub">${s.sub}</div>`:''}</div></div>`).join('');
+  let keys=g.keys.map(k=>`<div class="keycard" style="--kc:${CIRCLES[k[0]].color}"><div class="kh"><span class="g">${G[CIRCLES[k[0]].g]}</span><span>${k[1]}</span></div><p>${k[2]}</p></div>`).join('');
+  b.innerHTML=`<p class="intro">${g.intro}</p><div class="divider">${G.way}</div>${steps}
+    <div class="step"><div class="sg">${G.void}</div><div class="sc"><h3>${g.keysT}</h3><div class="keys">${keys}</div></div></div>
+    <p class="blessing">${g.bless}</p>`;
+}
+function applyLang(){
+  const t=T[lang];document.documentElement.lang=lang;
+  $("#kicker").textContent=t.kicker;$("#title").childNodes[0].nodeValue=t.title;
+  $("#subtitle").textContent=t.subtitle;$("#lede").textContent=t.lede;
+  $("#drawBtn").textContent=t.draw;$("#againBtn").textContent=t.again;
+  $("#galintro").textContent=t.galintro;$("#foot").textContent=t.foot;$("#footB").textContent=t.brand;
+  document.querySelectorAll('#modes button').forEach(x=>x.textContent=t.modes[x.dataset.mode]);
+  $("#spreadBtn").textContent=spreadCards.length?(lang==='ro'?"Trage din nou":"Draw again"):t.spreadBtn;
+  if(current){mainInner.innerHTML=frontHTML(current);mainInner.style.transform='scaleX(1)';$("#reading").textContent=t.reading(current);}
+  else{mainInner.innerHTML=backHTML();}
+  if(spreadCards.length){const inn=[...document.querySelectorAll('#spreadRow .cardinner')];
+    t.slots.forEach((s,i)=>{inn[i].closest('.slot').querySelector('.lbl').innerHTML=`${s.l}<small>${s.s}</small>`;inn[i].innerHTML=frontHTML(spreadCards[i]);});$("#spreadNote").textContent=t.spreadNote;}
+  else buildSpreadSlots();
+  buildGallery();buildGuide();
+}
+function setMode(m){mode=m;document.querySelectorAll('#modes button').forEach(b=>b.classList.toggle('on',b.dataset.mode===m));
+  ['draw','spread','gallery','howto'].forEach(x=>$("#p-"+x).classList.toggle('show',x===m));}
+document.querySelectorAll('#modes button').forEach(b=>b.onclick=()=>setMode(b.dataset.mode));
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{lang=b.dataset.lang;
+  document.querySelectorAll('.lang button').forEach(x=>x.classList.toggle('on',x===b));applyLang();});
+
+(function(){const cv=$("#stars"),x=cv.getContext('2d');let w,h,st=[];
+  function rs(){w=cv.width=innerWidth;h=cv.height=innerHeight;st=[];for(let i=0;i<70;i++)st.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.2,o:Math.random()*.6+.2,s:Math.random()*.02+.004});}
+  function tick(){x.clearRect(0,0,w,h);st.forEach(p=>{p.o+=p.s;if(p.o>.8||p.o<.15)p.s*=-1;x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fillStyle=`rgba(217,178,107,${p.o*.5})`;x.fill();});requestAnimationFrame(tick);}
+  addEventListener('resize',rs);rs();tick();})();
+
+mainInner.innerHTML=backHTML();
+buildSpreadSlots();applyLang();setMode('draw');
+</script>
+</body>
+</html>

@@ -67,7 +67,9 @@ main{margin-top:26px}
 .panel{display:none}
 .panel.show{display:block;animation:fade .5s ease}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.stage{display:flex;flex-direction:column;align-items:center;gap:26px}
+.stage{flex-direction:column;align-items:center;gap:26px}
+.panel.show.stage{display:flex}
+.dhead{text-align:center}
 .deckzone{position:relative;min-height:440px;display:flex;align-items:center;justify-content:center;width:100%}
 
 .card{width:300px;height:432px;position:relative}
@@ -162,7 +164,8 @@ footer .s{font-size:13px;margin-top:8px;font-style:italic}
     <p class="lede" id="lede">Amestecă, respiră, trage o carte. Cele cinci cercuri îți vor spune ce ai nevoie să auzi acum.</p>
     <div class="bar">
       <div class="tabs" id="modes">
-        <button data-mode="draw" class="on">O carte</button>
+        <button data-mode="daily" class="on">Cartea zilei</button>
+        <button data-mode="draw">O carte</button>
         <button data-mode="spread">Trei cercuri</button>
         <button data-mode="gallery">Toate cărțile</button>
         <button data-mode="howto">Cum se folosește</button>
@@ -171,7 +174,13 @@ footer .s{font-size:13px;margin-top:8px;font-style:italic}
     </div>
   </header>
   <main>
-    <section class="panel show stage" id="p-draw">
+    <section class="panel show stage" id="p-daily">
+      <div class="dhead" id="dailyHead"></div>
+      <div class="deckzone"><div class="card"><div class="cardinner" id="dailyInner"></div></div></div>
+      <p class="reading" id="dailyNote"></p>
+      <div class="ctarow" style="margin-top:20px"><button class="cta ghost" id="toDraw">Trage altă carte</button></div>
+    </section>
+    <section class="panel stage" id="p-draw">
       <div class="deckzone"><div class="card" id="mainCard"><div class="cardinner" id="mainInner"></div></div></div>
       <div class="ctarow">
         <button class="cta" id="drawBtn">Trage o carte</button>
@@ -275,7 +284,8 @@ const T={
   ro:{kicker:"Oracol al Înțelepciunii",title:"Oracolul celor Cinci Cercuri",subtitle:"Înțelepciune de tras · 52 de cărți",
     lede:"Amestecă, respiră, trage o carte. Cele cinci cercuri îți vor spune ce ai nevoie să auzi acum.",
     draw:"Trage o carte",again:"Încă o carte",spreadBtn:"Trage cele trei",brand:"Focul care cunoaște",
-    modes:{draw:"O carte",spread:"Trei cercuri",gallery:"Toate cărțile",howto:"Cum se folosește"},
+    modes:{daily:"Cartea zilei",draw:"O carte",spread:"Trei cercuri",gallery:"Toate cărțile",howto:"Cum se folosește"},
+    dailyKicker:"Cartea zilei",dailyNote:"Revino mâine pentru o carte nouă.",toDraw:"Trage altă carte",loc:"ro-RO",
     reading:c=>`Cercul ${CIRCLES[c.c].ro} · cartea ${c.n} din 52`,
     spreadNote:"Așezare — unde stai. Cale — ce ai de făcut. Libertate — ce te eliberează.",
     slots:[{l:"Așezare",s:"unde stai"},{l:"Cale",s:"ce ai de făcut"},{l:"Libertate",s:"ce te eliberează"}],
@@ -284,7 +294,8 @@ const T={
   en:{kicker:"Oracle of Wisdom",title:"The Five Circles Oracle",subtitle:"Wisdom to draw · 52 cards",
     lede:"Shuffle, breathe, draw a card. The five circles will tell you what you need to hear now.",
     draw:"Draw a card",again:"Draw again",spreadBtn:"Draw the three",brand:"The Fire That Knows",
-    modes:{draw:"One card",spread:"Three circles",gallery:"All cards",howto:"How to read"},
+    modes:{daily:"Card of the day",draw:"One card",spread:"Three circles",gallery:"All cards",howto:"How to read"},
+    dailyKicker:"Card of the day",dailyNote:"Come back tomorrow for a new card.",toDraw:"Draw another card",loc:"en-US",
     reading:c=>`Circle of ${CIRCLES[c.c].en} · card ${c.n} of 52`,
     spreadNote:"Ground — where you stand. Path — what to do. Freedom — what sets you free.",
     slots:[{l:"Ground",s:"where you stand"},{l:"Path",s:"what to do"},{l:"Freedom",s:"what frees you"}],
@@ -385,6 +396,12 @@ function buildGuide(){
     <div class="step"><div class="sg">${G.void}</div><div class="sc"><h3>${g.keysT}</h3><div class="keys">${keys}</div></div></div>
     <p class="blessing">${g.bless}</p>`;
 }
+function dailyCard(){var d=new Date();var n=d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate();var idx=(Math.imul(n,2654435761)>>>0)%CARDS.length;return CARDS[idx];}
+function renderDaily(){var t=T[lang];var c=dailyCard();var d=new Date();var ds="";try{ds=d.toLocaleDateString(t.loc,{weekday:"long",day:"numeric",month:"long"});}catch(e){ds=d.toDateString();}
+  $("#dailyHead").innerHTML='<div style="font-family:var(--disp);letter-spacing:.32em;text-transform:uppercase;font-size:12px;color:var(--gold);font-weight:600">'+t.dailyKicker+'</div><div style="color:var(--mute);font-style:italic;margin-top:5px;margin-bottom:18px">'+ds+'</div>';
+  $("#dailyInner").innerHTML=frontHTML(c);
+  $("#dailyNote").textContent=t.dailyNote;
+  $("#toDraw").textContent=t.toDraw;}
 function applyLang(){
   const t=T[lang];document.documentElement.lang=lang;
   $("#kicker").textContent=t.kicker;$("#title").childNodes[0].nodeValue=t.title;
@@ -398,10 +415,10 @@ function applyLang(){
   if(spreadCards.length){const inn=[...document.querySelectorAll('#spreadRow .cardinner')];
     t.slots.forEach((s,i)=>{inn[i].closest('.slot').querySelector('.lbl').innerHTML=`${s.l}<small>${s.s}</small>`;inn[i].innerHTML=frontHTML(spreadCards[i]);});$("#spreadNote").textContent=t.spreadNote;}
   else buildSpreadSlots();
-  buildGallery();buildGuide();
+  buildGallery();buildGuide();renderDaily();
 }
 function setMode(m){mode=m;document.querySelectorAll('#modes button').forEach(b=>b.classList.toggle('on',b.dataset.mode===m));
-  ['draw','spread','gallery','howto'].forEach(x=>$("#p-"+x).classList.toggle('show',x===m));}
+  ['daily','draw','spread','gallery','howto'].forEach(x=>$("#p-"+x).classList.toggle('show',x===m));}
 document.querySelectorAll('#modes button').forEach(b=>b.onclick=()=>setMode(b.dataset.mode));
 document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{lang=b.dataset.lang;
   document.querySelectorAll('.lang button').forEach(x=>x.classList.toggle('on',x===b));applyLang();});
@@ -412,7 +429,8 @@ document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{lang=b.datas
   addEventListener('resize',rs);rs();tick();})();
 
 mainInner.innerHTML=backHTML();
-buildSpreadSlots();applyLang();setMode('draw');
+document.getElementById('toDraw').onclick=function(){setMode('draw');};
+buildSpreadSlots();applyLang();setMode('daily');
 </script>
 </body>
 </html>
